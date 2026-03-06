@@ -33,6 +33,33 @@ int main(int argc, char *argv[]) {
     float c = atof(argv[3]);
 	
 	//complete the rest of the code
+    if (a == 0) {
+        printf("Linear equation\n");
+        return 0;
+    }
+
+    float D = b*b - 4*a*c;
+
+    if (D > 0) {
+        float x1 = (-b + sqrt(D)) / (2*a);
+        float x2 = (-b - sqrt(D)) / (2*a);
+        printf("Two distinct real roots:\n");
+        printf("x1 = %.2f\n", x1);
+        printf("x2 = %.2f\n", x2);
+    }
+    else if (D == 0) {
+        float x = -b / (2*a);
+        printf("One real root:\n");
+        printf("x = %.2f\n", x);
+    }
+    else {
+        float realPart = -b / (2*a);
+        float imagPart = sqrt(-D) / (2*a);
+        printf("Two complex roots:\n");
+        printf("x1 = %.2f + %.2fi\n", realPart, imagPart);
+        printf("x2 = %.2f - %.2fi\n", realPart, imagPart);
+    }
 	
 	return 0;
-}aadada
+}
+
